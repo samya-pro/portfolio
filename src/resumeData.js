@@ -1,61 +1,88 @@
 let resumeData = {
     "imagebaseurl":"https://rbhatia46.github.io/",
-    "name": "Rahul Bhatia",
-    "role": "Frontend Developer and Data Scientist",
+    "name": "Samy Allal",
+    "role": "Software Engineer & Data Scientist",
     "linkedinId":"Your LinkedIn Id",
     "skypeid": "Your skypeid",
-    "roleDescription": "I like dabbling in various parts of frontend development and like to learn about new technologies, write technical articles or simply play games in my free time.",
+    "roleDescription": "I am a UCLA graduate skilled in Software Engineering and Data Science. I specialize in full-stack development, creating seamless user experiences with a passion for turning ideas into solutions.",
     "socialLinks":[
         {
           "name":"linkedin",
-          "url":"https://www.linkedin.com/in/rahul-bhatia-67ba08121/",
+          "url":"https://www.linkedin.com/in/samy-allal/",
           "className":"fa fa-linkedin"
         },
         {
           "name":"github",
-          "url":"http://github.com/rbhatia46",
+          "url":"https://github.com/samyallal",
           "className":"fa fa-github"
         },
         {
           "name":"skype",
-          "url":"http://twitter.com/rbhatia46",
+          "url":"",
           "className":"fa fa-twitter"
         }
       ],
-    "aboutme":"I am currently a pre-final year student at The LNM Institute of Information Technology and pursuing my B.Tech from here. I am a self taught Full Stack Web Developer, currently diving deeper into Machine Learning. I believe that to be successful in life, one needs to be obsessive with their dreams and keep working towards them.",
-    "address":"India",
-    "website":"https://rbhatia46.github.io",
+    "aboutme":"Hi there! I'm Samy ALLAL, an ambitious UCLA graduate with a background in Mathematics and Computer Science. I bridge the worlds of Software Engineering and Data Science, specializing in full-stack development with expertise in Python, Java, C, and C++. My passion lies in creating seamless user experiences through intuitive GUIs integrated with robust back-end systems. I thrive on turning ideas into actionable solutions. Outside of work, you can find me at the gym fighting to hit personal records, on the soccer field, or cruising on my motorcycle. I am eager to continue on my career in Software Engineering and Data Science/Machine Learning.",
+    "address":"CA, United States of America",
+    "website":"",
     "education":[
       {
-        "UniversityName":"The LNM Insitute of Information Technology",
-        "specialization":"Some specialization",
-        "MonthOfPassing":"Aug",
-        "YearOfPassing":"2020",
+        "UniversityName":"University of California, Los Angeles (UCLA)",
+        "specialization":"Bachelor’s of Science, Mathematics of Computation GPA: 3.62, Major: 3.74",
+        "areaOfFocus": "Software Engineering & Machine Learning",
+        "dateStarted":"Jun.",
+        "dateLeaving":"2021",
         "Achievements":"Some Achievements"
       },
       {
-        "UniversityName":"Some University",
-        "specialization":"Some specialization",
-        "MonthOfPassing":"Jan",
-        "YearOfPassing":"2018",
+        "UniversityName":"Santa Monica College",
+        "specialization":"Transfer - Major: Computer Science GPA: 3.96",
+        "areaOfFocus": "Programming",
+        "dateStarted":"Jun.",
+        "dateLeaving":"2019",
         "Achievements":"Some Achievements"
       }
     ],
     "work":[
       {
-        "CompanyName":"Some Company",
-        "specialization":"Some specialization",
-        "MonthOfLeaving":"Jan",
-        "YearOfLeaving":"2018",
-        "Achievements":"Some Achievements"
+        "CompanyName":"Ronin Technologies Ltd",
+        "specializations": [
+          {
+            "specialization":"Software Engineer",
+            "dateStarted":"Jan",
+            "dateLeaving":"2018",
+            "Achievements":"Some Achievements"
+          },
+          {
+            "specialization":"Data Scientist",
+            "dateStarted":"Jan",
+            "dateLeaving":"2018",
+            "Achievements":"Some Achievements"
+          }
+        ]
       },
       {
-        "CompanyName":"Some Company",
-        "specialization":"Some specialization",
-        "MonthOfLeaving":"Jan",
-        "YearOfLeaving":"2018",
-        "Achievements":"Some Achievements"
-      }
+        "CompanyName":"PARIS Lab at UCLA, Engineering",
+        "specializations": [
+          {
+            "specialization":"Research Assistant",
+            "dateStarted":"Jan",
+            "dateLeaving":"2018",
+            "Achievements":"Some Achievements"
+          },
+        ]
+      },
+      {
+        "CompanyName":"Undergraduate Students Association Council, Office of the Internal Vice President",
+        "specializations": [
+          {
+            "specialization":"Software Developer",
+            "dateStarted":"Jan",
+            "dateLeaving":"2018",
+            "Achievements":"Some Achievements"
+          },
+        ]
+      },
     ],
     "skillsDescription":"Your skills here",
     "skills":[
