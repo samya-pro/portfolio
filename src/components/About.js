@@ -10,7 +10,6 @@ export default class About extends Component {
             <img className="profile-pic"  src="images/profilepic.jpg" alt="" style={{height: '40%', width: '40%'}} />
          </div>
 
-
          <div className="column" style={{flex: 7}}>
             <h2>About Me</h2>
             <p>{resumeData.aboutme}</p>
