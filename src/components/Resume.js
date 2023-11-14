@@ -44,17 +44,43 @@ export default  class Resume extends Component {
 
               <div className="nine columns main-col">
                 <div className="">
-                  <ul className="skills">
-                    {
-                      resumeData.skills && resumeData.skills.map((item) => {
-                        return(
-                          <li>
-                            <h4>{item.skillname}</h4>
-                          </li>
-                        )
-                      })
-                    }
-                  </ul>
+                  <div style={{display: 'flex', justifyContent: "space-between", width: "150%"}}>
+                    <ul>
+                      <li>C/C++ Programming</li>
+                      <li>Java</li>
+                      <li>Python</li>
+                      <li>JavaScript</li>
+                      <li>HTML/CSS</li>
+                      <li>React/Node.js</li>
+                      <li>PHP</li>
+                      <li>Django</li>
+                      {/* Add more list items as needed */}
+                    </ul>
+
+                    <ul>
+                      <li>Databases</li>
+                      <li>SQL/PostreSQL</li>
+                      <li>NoSQL</li>
+                      <li>MongoDB</li>
+                      <li>Spark</li>
+                      <li>Cloud Computing</li>
+                      <li>AWS/GCP/Azure</li>
+                      <li>Terraform/Terragrunt</li>
+                      {/* Add more list items as needed */}
+                    </ul>
+
+                    <ul>
+                      <li>Machine Learning/AI</li>
+                      <li>Tensorflow/Scikit-Learn/Keras</li>
+                      <li>DevOps</li>
+                      <li>Version Control</li>
+                      <li>Git/GitHub</li>
+                      <li>CI/CD Pipelines</li>
+                      <li>Data Analytics</li>
+                      <li>Agile Methodology</li>
+                      {/* Add more list items as needed */}
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
