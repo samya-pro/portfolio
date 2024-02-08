@@ -27,6 +27,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+
   <!-- =======================================================
   * Template Name: MyResume
   * Updated: Jan 29 2024 with Bootstrap v5.3.2
@@ -57,19 +58,81 @@
 
   </header><!-- End Header -->
 
+
+  <style>
+    /* General styles */
+    #hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      font-size: 24px;
+      margin: 0 10px;
+      color: #000;
+    }
+
+    /* Styles for small screens */
+    @media screen and (max-width: 767px) {
+      .info {
+        margin-top: 20px;
+      }
+    }
+  </style>
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Samy Allal</h1>
-      <p>I'm a <span class="typed" data-typed-items="Designer, Developer, Freelancer, Trainer"></span></p>
+      <h1>Samy ALLAL</h1>
+      <p>I'm a <span class="typed" data-typed-items="Developer, Designer, Freelancer"></span></p>
       <div class="social-links">
         <a href="" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="https://www.instagram.com/sam.as/?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
         <a href="https://www.linkedin.com/in/samy-allal/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
+      <div class="container info mt-4" data-aos="zoom-in" data-aos-delay="100">
+        <p>Business website is launching soon!</p>
+        <div class="container info" id="countdown"></div>
+      </div>
     </div>
   </section><!-- End Hero -->
+
+  <script>
+    // Set the launch date (replace this with your actual launch date)
+    const launchDate = new Date('2024-02-10T00:00:00');
+
+    // Update the countdown every second
+    const countdown = setInterval(() => {
+      // Get the current date and time
+      const currentDate = new Date().getTime();
+
+      // Calculate the time remaining until launch date
+      const timeRemaining = launchDate - currentDate;
+
+      // Calculate days, hours, minutes, and seconds
+      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+      // Display the countdown
+      document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // If the launch date has passed, display a message and stop the countdown
+      if (timeRemaining < 0) {
+        clearInterval(countdown);
+        document.getElementById('countdown').innerHTML = 'The website has launched!';
+      }
+    }, 1000);
+
+  </script>
 
   <main id="main">
 
@@ -79,19 +142,25 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>Between the professional <b>A.I. Specialist & Web Developer</b>, the passionate <b>Personal Trainer & Fitness Coach</b>, or your <b>Motorsports Enthusiast</b>, scroll over the profile that best suits your needs to learn more.</p>
+          <p>Imagine having a tech-savvy ally in your corner, someone who not only understands the intricate world of <b>technology</b> but also knows how to wield it to <b>drive your business forward</b>. That's where I come in.
+
+            With a background spanning <b>tech, sales, fitness, and logistics</b>, I bring a unique blend of skills and experiences to the table. I'm passionate about leveraging the latest advancements in <b>AI</b> to solve complex business challenges and unlock new opportunities for growth.
+            
+            But I'm not just a tech enthusiast—I'm also a dedicated athlete and motorsports aficionado. 
+            
+            So, if you're ready to take your business to new heights and embrace the future of technology, <b>let's connect</b>. Together, we'll harness the power of AI to propel your business forward and achieve unprecedented success.</p>
         </div>
 
         <br />
         
         <div class="about-container container mt-5">
           <div class="row no-gutters" id="about-container">
-            <div class="col mb-1" onmouseover="expand(this)" onmouseout="shrink(this)">
-              <div class="original-view">
+            <div class="mb-1">
+              <!--<div class="original-view">
                 <img src="assets/img/schoolpic.jpg" class="img-fluid" alt="Profile Image 1" style="width: 100%;height: 500px;opacity: 0.8;" id="card-1">
-              </div>
+              </div>-->
 
-              <div class="expanded-view" style="display: none;height: 500px">
+              <div class="row no-gutters">
                 <div class="col-lg-3">
                   <img src="assets/img/schoolpic.jpg" class="img-fluid" alt="Profile Image 1" style="width: 100%;height: 500px;opacity: 0.8;" id="card-1">
                 </div>
@@ -108,7 +177,7 @@
                           <ul>
                             <li><i class="bi bi-chevron-right"></i> <strong>School:</strong> <span>University of California, Los Angeles</span></li>
                             <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+1 (310)-460-8440</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>California, USA</span></li>
+                            <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>San Diego, California, USA</span></li>
                           </ul>
                         </div>
                         <div class="col-lg-6">
@@ -127,7 +196,7 @@
                 </div>
               </div>
             </div>
-            <div class="col mb-1" onmouseover="expand(this)" onmouseout="shrink(this)">
+            <!--<div class="col mb-1" onmouseover="expand(this)" onmouseout="shrink(this)">
               <div class="original-view">
                 <img src="assets/img/gym.jpg" class="img-fluid" alt="Profile Image 2" style="width: 100%;height: 500px;opacity: 0.8;" id="card-2">
               </div>
@@ -137,7 +206,7 @@
                   <img src="assets/img/gym.jpg" class="img-fluid" alt="Profile Image 2" style="width: 100%;height: 500px;opacity: 0.8;" id="card-2">
                 </div>
                 <div class="col-lg-9">
-                  <!-- Content for expanded view goes here -->
+                  <-- Content for expanded view goes here --
                   <div class="data-content">
                     <div class="content">
                       <h3>Personal Trainer &amp; Fitness Coach.</h3>
@@ -178,7 +247,7 @@
                   <img src="assets/img/moto.jpg" class="img-fluid" alt="Profile Image 3" style="width: 100%;height: 500px;opacity: 0.8;" id="card-3">
                 </div>
                 <div class="col-lg-9">
-                  <!-- Content for expanded view goes here -->
+                  <-- Content for expanded view goes here --
                   <div class="data-content">
                     <div class="content">
                       <h3>Motorsports Enthusiast.</h3>
@@ -208,7 +277,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -301,13 +370,13 @@
 
         <div class="section-title">
           <h2>Facts</h2>
-          <p>Explore the profiles that resonate with you and witness the tangible results firsthand – your journey, your choice, your undeniable success.</p>
+          <p>Explore my profile and witness the tangible results of my expertise firsthand – your journey, your choice, your undeniable success.</p>
         </div>
 
         <div class="text-center">
           <button type="button" class="btn btn-secondary btn-facts mb-1" style="width: 250px" onclick="displayFactsData('A.I. & Web Development Facts', this)">A.I. & Web Development</button>
-          <button type="button" class="btn btn-outline-primary btn-facts mb-1" style="width: 250px" onclick="displayFactsData('Fitness Coaching Facts', this)">Fitness Coaching</button>
-          <button type="button" class="btn btn-outline-danger btn-facts mb-1" style="width: 250px" onclick="displayFactsData('Motorsports Activities Facts', this)">Motorsports Activities</button>
+          <!--<button type="button" class="btn btn-outline-primary btn-facts mb-1" style="width: 250px" onclick="displayFactsData('Fitness Coaching Facts', this)">Fitness Coaching</button>
+          <button type="button" class="btn btn-outline-danger btn-facts mb-1" style="width: 250px" onclick="displayFactsData('Motorsports Activities Facts', this)">Motorsports Activities</button>-->
         </div>
 
         <br />
@@ -500,13 +569,13 @@
 
         <div class="section-title">
           <h2>Skills</h2>
-          <p>Select your profile of interest to uncover my skills and witness how they seamlessly align with your objectives.</p>
+          <p>Explore my technical expertise and skills further, and witness how they seamlessly align with your objectives.</p>
         </div>
 
         <div class="text-center">
           <button type="button" class="btn btn-secondary btn-skills mb-1" style="width: 250px" onclick="displaySkillsData('A.I. & Web Development Skills', this)">A.I. & Web Development</button>
-          <button type="button" class="btn btn-outline-primary btn-skills mb-1" style="width: 250px" onclick="displaySkillsData('Fitness Coaching Skills', this)">Fitness Coaching</button>
-          <button type="button" class="btn btn-outline-danger btn-skills mb-1" style="width: 250px" onclick="displaySkillsData('Motorsports Activities Skills', this)">Motorsports Activities</button>
+          <!--<button type="button" class="btn btn-outline-primary btn-skills mb-1" style="width: 250px" onclick="displaySkillsData('Fitness Coaching Skills', this)">Fitness Coaching</button>
+          <button type="button" class="btn btn-outline-danger btn-skills mb-1" style="width: 250px" onclick="displaySkillsData('Motorsports Activities Skills', this)">Motorsports Activities</button>-->
         </div>
 
         <br />
@@ -833,416 +902,19 @@
       </div>
     </section><!-- End Skills Section -->
 
-    <!-- ======= Resume Section ======= -->
-    <section id="resume" class="resume">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>Explore the facets of my resume that resonate with your requirements and gain insight into my detailed background – your evaluation, your choice, your confident decision.</p>
-        </div>
-
-        <div class="text-center">
-          <button type="button" class="btn btn-secondary btn-resume mb-1" style="width: 250px" onclick="displayResumeData('A.I. & Web Development Resume', this)">A.I. & Web Development</button>
-          <button type="button" class="btn btn-outline-primary btn-resume mb-1" style="width: 250px" onclick="displayResumeData('Fitness Coaching Resume', this)">Fitness Coaching</button>
-          <button type="button" class="btn btn-outline-danger btn-resume mb-1" style="width: 250px" onclick="displayResumeData('Motorsports Activities Resume', this)">Motorsports Activities</button>
-        </div>
-
-        <br />
-        <br />
-
-        <div id="data-resume-container" class="text-center">
-          <!-- Data will be displayed here -->
-        </div>
-        
-        <script>
-          function displayResumeData(buttonType, element) {
-            var dataContainer = document.getElementById('data-resume-container');
-            
-            // Clear previous data
-            dataContainer.innerHTML = '';
-
-            var allResumeButtons = document.querySelectorAll('.btn-resume');
-
-        
-            // Display corresponding data based on the button clicked
-            switch (buttonType) {
-              case 'A.I. & Web Development Resume':
-                element.classList.add("btn-secondary");
-                element.classList.remove("btn-outline-secondary");
-                
-                // Reset the other button to its outline class
-                // Reset the other button to its outline class
-                allResumeButtons[1].classList.add('btn-outline-primary');
-                allResumeButtons[1].classList.remove('btn-primary');
-                allResumeButtons[2].classList.add('btn-outline-danger');
-                allResumeButtons[2].classList.remove('btn-danger');
-
-                document.querySelector('.ai-resume').style.display = 'flex';
-                document.querySelector('.fitness-resume').style.display = 'none';
-                document.querySelector('.moto-resume').style.display = 'none';
-                break;
-              case 'Fitness Coaching Resume':
-                element.classList.add("btn-primary");
-                element.classList.remove("btn-outline-primary");
-
-                // Reset the other button to its outline class
-                // Reset the other button to its outline class
-                allResumeButtons[0].classList.add('btn-outline-secondary');
-                allResumeButtons[0].classList.remove('btn-secondary');
-                allResumeButtons[2].classList.add('btn-outline-danger');
-                allResumeButtons[2].classList.remove('btn-danger');
-
-                document.querySelector('.ai-resume').style.display = 'none';
-                document.querySelector('.fitness-resume').style.display = 'flex';
-                document.querySelector('.moto-resume').style.display = 'none';
-                break;
-              case 'Motorsports Activities Resume':
-                element.classList.add("btn-danger");
-                element.classList.remove("btn-outline-danger");
-
-                // Reset the other button to its outline class
-                // Reset the other button to its outline class
-                allResumeButtons[0].classList.add('btn-outline-secondary');
-                allResumeButtons[0].classList.remove('btn-secondary');
-                allResumeButtons[1].classList.add('btn-outline-primary');
-                allResumeButtons[1].classList.remove('btn-primary');
-
-                document.querySelector('.ai-resume').style.display = 'none';
-                document.querySelector('.fitness-resume').style.display = 'none';
-                document.querySelector('.moto-resume').style.display = 'flex';
-                break;
-              default:
-                break;
-            }
-          }
-        </script>
-
-        <!-- AI Resume -->
-        <div class="row ai-resume">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Samy Allal</h4>
-              <p><em>Innovative and deadline-driven A.I. Specialist and Web Developer with 4+ years of experience, crafting user-centered digital solutions from initial concept to final, polished deliverables – your technology needs, your choice, your guaranteed success.</em></p>
-              <ul>
-                <li>San Diego County, California, USA</li>
-                <li>(310) 460-8440</li>
-                <li>samyallal.pro@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Science, Mathematics of Computation</h4>
-              <h5>2019 - 2021</h5>
-              <p><em>University of California, Los Angeles, CA</em></p>
-              <p>In academia, my specialization encompassed software engineering, data science, and machine learning – honing expertise at the forefront of technological advancement.</p>
-            </div>
-            <div class="resume-item">
-              <h4>Associate Degree, Computer Science</h4>
-              <h5>2017 - 2019</h5>
-              <p><em>Santa Monica College, CA</em></p>
-              <p>In this academic pursuit, my concentration delved into the realms of software development, web development, and AI integration for business solutions – refining skills vital to industry innovation.</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Software Engineer &amp; Data Scientist </h4>
-              <h5>2021 - Present</h5>
-              <p><em>Ronin Technologies Ltd, Dubai, UAE</em></p>
-              <ul>
-                <li>Led task management & distribution for software development projects by effectively coordinating with the engineering team. </li>
-                <li>Collaborated closely with clients & the head engineer, ensuring seamless communication and alignment of project objectives. </li>
-                <li>Demonstrated expertise in end-to-end software development processes, consistently delivering high-quality solutions in line
-                  with client requirements and company standards. </li>
-                <li>Successfully managed multiple concurrent projects, showcasing strong organizational skills and the ability to thrive in a
-                  dynamic, client-facing environment. </li>
-              </ul>
-            </div>
-            <div class="resume-item">
-              <h4>Research Assistant - Machine Learning</h4>
-              <h5>2020 - 2021</h5>
-              <p><em>University of California, Los Angeles, CA, USA</em></p>
-              <ul>
-                <li>Adapted Natural Language Processing techniques to the Materials Science domain for data extraction & analysis. </li>
-                <li>Constructed and evaluated Deep Neural Network models for word-level classification into domain specific categories using
-                  Keras, and Tensorflow, resulting in an accuracy of over 75%</li>
-                <li>Delivered presentations during the weekly meetings held by associate professor Dr. Bauchy and the lab’s members</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fitness Resume -->
-        <div class="row fitness-resume" style="display: none;">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Samy Allal</h4>
-              <p><em>Results-driven Fitness Coach with a passion for transforming goals into tangible achievements. I specialize in crafting personalized fitness plans, providing motivational support, and ensuring your journey to optimal health results in measurable success – your fitness goals, your journey, your undeniable achievements.</em></p>
-              <ul>
-                <li>San Diego County, California, USA</li>
-                <li>(310) 460-8440</li>
-                <li>samyallal.pro@gmail.com</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>NASM Certification</h4>
-              <h5>In Progress</h5>
-              <p><em>National Academy of Sports Medicine</em></p>
-              <p>Currently enhancing my expertise in training and nutrition through NASM for continuous learning and skill advancement.</p>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
-            <div class="resume-item">
-              <h4>Personal Trainer &amp; Online Coach</h4>
-              <h5>2023 - Present</h5>
-              <p><em>California, USA </em></p>
-              <ul>
-                <li>Designed and implemented customized fitness plans for my clients</li>
-                <li>Provided motivational coaching and support following best practices in the industry </li>
-                <li>Implemented goal-oriented progress tracking systems through various software applications</li>
-                <li>Applied expertise in NASM principles for better results</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Motorsports Resume -->
-        <div class="row moto-resume" style="display: none;">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Samy Allal</h4>
-              <p><em>Enthusiastically immersed in motorsports, including Cars, Formula 1, and Motorcycles, I'm extending my passion to encompass piloting and jetskiing. Embracing the dynamic world of high-speed pursuits, I find joy in exploring new horizons and understanding the intricacies of various motorsport disciplines.</em></p>
-              <ul>
-                <li>San Diego County, California, USA</li>
-                <li>(310) 460-8440</li>
-                <li>samyallal.pro@gmail.com</li>
-              </ul>
-            </div>
-            
-            <!--
-            <h3 class="resume-title">Owned Vehicles</h3>
-            <div class="resume-item">
-              <h4>2018 Kawasaki Z-900</h4>
-              <h5>2023 - Present</h5>
-              <p><em>Motorcycle</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>2017 Yamaha MT-07</h4>
-              <h5>2023 - Present</h5>
-              <p><em>Motorcycle</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>2015 Ford Mustang - Black</h4>
-              <h5>2019 - 2023</h5>
-              <p><em>Muscle Car</em></p>
-            </div>
-          </div>-->
-
-          <div class="col-lg-6">
-            <h3 class="resume-title">Motorsports Disciplines</h3>
-            <div class="resume-item">
-              <h4>Motorcycles (MotoGP)</h4>
-              <h5>2020 - Present</h5>
-              <p><em>International</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>Cars (F-1)</h4>
-              <h5>2018 - Present</h5>
-              <p><em>International</em></p>
-            </div>
-            <!--
-            <div class="resume-item">
-              <h4>Aviation (Helicopters)</h4>
-              <h5>Soon</h5>
-              <p><em>International</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>Boating (Jetski, Wake-board)</h4>
-              <h5>Soon</h5>
-              <p><em>International</em></p>
-            </div>-->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Resume Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Discover the dimensions of my portfolio that align with your needs and delve into the intricate details of my work – your assessment, your preference, your informed choice.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">A.I.</li>
-              <li data-filter=".filter-card">Fitness</li>
-              <li data-filter=".filter-web">Motorsports</li>
-            </ul>
-          </div>
-        </div>
-
-        <!--
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>-->
-        <p class="text-center">Coming Soon</p>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>Discover tailored services aligned with profiles of your interest – your journey, your choice, your undeniable success.</p>
+          <p>Discover tailored services aligned with your interests – your journey, your choice, your undeniable success.</p>
         </div>
 
         <div class="text-center">
           <button type="button" class="btn btn-secondary btn-services mb-1" style="width: 250px" onclick="displayServicesData('A.I. & Web Development Services', this)">A.I. & Web Development</button>
-          <button type="button" class="btn btn-outline-primary btn-services mb-1" style="width: 250px" onclick="displayServicesData('Fitness Coaching Services', this)">Fitness Coaching</button>
-          <button type="button" class="btn btn-outline-danger btn-services mb-1" style="width: 250px" onclick="displayServicesData('Motorsports Activities Services', this)">Motorsports Activities</button>
+          <!--<button type="button" class="btn btn-outline-primary btn-services mb-1" style="width: 250px" onclick="displayServicesData('Fitness Coaching Services', this)">Fitness Coaching</button>
+          <button type="button" class="btn btn-outline-danger btn-services mb-1" style="width: 250px" onclick="displayServicesData('Motorsports Activities Services', this)">Motorsports Activities</button>-->
         </div>
 
         <br />
@@ -1492,6 +1164,405 @@
       </div>
     </section><!-- End Services Section -->
 
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Resume</h2>
+          <p>Explore the facets of my resume that resonate with your requirements and gain insight into my detailed background – your evaluation, your choice, your confident decision.</p>
+        </div>
+
+        <div class="text-center">
+          <button type="button" class="btn btn-secondary btn-resume mb-1" style="width: 250px" onclick="displayResumeData('A.I. & Web Development Resume', this)">A.I. & Web Development</button>
+          <!--<button type="button" class="btn btn-outline-primary btn-resume mb-1" style="width: 250px" onclick="displayResumeData('Fitness Coaching Resume', this)">Fitness Coaching</button>
+          <button type="button" class="btn btn-outline-danger btn-resume mb-1" style="width: 250px" onclick="displayResumeData('Motorsports Activities Resume', this)">Motorsports Activities</button>-->
+        </div>
+
+        <br />
+        <br />
+
+        <div id="data-resume-container" class="text-center">
+          <!-- Data will be displayed here -->
+        </div>
+        
+        <script>
+          function displayResumeData(buttonType, element) {
+            var dataContainer = document.getElementById('data-resume-container');
+            
+            // Clear previous data
+            dataContainer.innerHTML = '';
+
+            var allResumeButtons = document.querySelectorAll('.btn-resume');
+
+        
+            // Display corresponding data based on the button clicked
+            switch (buttonType) {
+              case 'A.I. & Web Development Resume':
+                element.classList.add("btn-secondary");
+                element.classList.remove("btn-outline-secondary");
+                
+                // Reset the other button to its outline class
+                // Reset the other button to its outline class
+                allResumeButtons[1].classList.add('btn-outline-primary');
+                allResumeButtons[1].classList.remove('btn-primary');
+                allResumeButtons[2].classList.add('btn-outline-danger');
+                allResumeButtons[2].classList.remove('btn-danger');
+
+                document.querySelector('.ai-resume').style.display = 'flex';
+                document.querySelector('.fitness-resume').style.display = 'none';
+                document.querySelector('.moto-resume').style.display = 'none';
+                break;
+              case 'Fitness Coaching Resume':
+                element.classList.add("btn-primary");
+                element.classList.remove("btn-outline-primary");
+
+                // Reset the other button to its outline class
+                // Reset the other button to its outline class
+                allResumeButtons[0].classList.add('btn-outline-secondary');
+                allResumeButtons[0].classList.remove('btn-secondary');
+                allResumeButtons[2].classList.add('btn-outline-danger');
+                allResumeButtons[2].classList.remove('btn-danger');
+
+                document.querySelector('.ai-resume').style.display = 'none';
+                document.querySelector('.fitness-resume').style.display = 'flex';
+                document.querySelector('.moto-resume').style.display = 'none';
+                break;
+              case 'Motorsports Activities Resume':
+                element.classList.add("btn-danger");
+                element.classList.remove("btn-outline-danger");
+
+                // Reset the other button to its outline class
+                // Reset the other button to its outline class
+                allResumeButtons[0].classList.add('btn-outline-secondary');
+                allResumeButtons[0].classList.remove('btn-secondary');
+                allResumeButtons[1].classList.add('btn-outline-primary');
+                allResumeButtons[1].classList.remove('btn-primary');
+
+                document.querySelector('.ai-resume').style.display = 'none';
+                document.querySelector('.fitness-resume').style.display = 'none';
+                document.querySelector('.moto-resume').style.display = 'flex';
+                break;
+              default:
+                break;
+            }
+          }
+        </script>
+
+        <!-- AI Resume -->
+        <div class="row ai-resume">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Samy Allal</h4>
+              <p><em>Innovative and deadline-driven A.I. Specialist and Web Developer with 4+ years of experience, crafting user-centered digital solutions from initial concept to final, polished deliverables – your technology needs, your choice, your guaranteed success.</em></p>
+              <ul>
+                <li>San Diego County, California, USA</li>
+                <li>(310) 460-8440</li>
+                <li>samyallal.pro@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>Bachelor of Science, Mathematics of Computation</h4>
+              <h5>2019 - 2021</h5>
+              <p><em>University of California, Los Angeles, CA</em></p>
+              <p>In academia, my specialization encompassed software engineering, data science, and machine learning – honing expertise at the forefront of technological advancement.</p>
+            </div>
+            <div class="resume-item">
+              <h4>Associate Degree, Computer Science</h4>
+              <h5>2017 - 2019</h5>
+              <p><em>Santa Monica College, CA</em></p>
+              <p>In this academic pursuit, my concentration delved into the realms of software development, web development, and AI integration for business solutions – refining skills vital to industry innovation.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Software Engineer &amp; Data Scientist </h4>
+              <h5>2021 - Present</h5>
+              <p><em>Ronin Technologies Ltd, Dubai, UAE</em></p>
+              <ul>
+                <li>Led task management & distribution for software development projects by effectively coordinating with the engineering team. </li>
+                <li>Collaborated closely with clients & the head engineer, ensuring seamless communication and alignment of project objectives. </li>
+                <li>Demonstrated expertise in end-to-end software development processes, consistently delivering high-quality solutions in line
+                  with client requirements and company standards. </li>
+                <li>Successfully managed multiple concurrent projects, showcasing strong organizational skills and the ability to thrive in a
+                  dynamic, client-facing environment. </li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Research Assistant - Machine Learning</h4>
+              <h5>2020 - 2021</h5>
+              <p><em>University of California, Los Angeles, CA, USA</em></p>
+              <ul>
+                <li>Adapted Natural Language Processing techniques to the Materials Science domain for data extraction & analysis. </li>
+                <li>Constructed and evaluated Deep Neural Network models for word-level classification into domain specific categories using
+                  Keras, and Tensorflow, resulting in an accuracy of over 75%</li>
+                <li>Delivered presentations during the weekly meetings held by associate professor Dr. Bauchy and the lab’s members</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fitness Resume -->
+        <div class="row fitness-resume" style="display: none;">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Samy Allal</h4>
+              <p><em>Results-driven Fitness Coach with a passion for transforming goals into tangible achievements. I specialize in crafting personalized fitness plans, providing motivational support, and ensuring your journey to optimal health results in measurable success – your fitness goals, your journey, your undeniable achievements.</em></p>
+              <ul>
+                <li>San Diego County, California, USA</li>
+                <li>(310) 460-8440</li>
+                <li>samyallal.pro@gmail.com</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>NASM Certification</h4>
+              <h5>In Progress</h5>
+              <p><em>National Academy of Sports Medicine</em></p>
+              <p>Currently enhancing my expertise in training and nutrition through NASM for continuous learning and skill advancement.</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Personal Trainer &amp; Online Coach</h4>
+              <h5>2023 - Present</h5>
+              <p><em>California, USA </em></p>
+              <ul>
+                <li>Designed and implemented customized fitness plans for my clients</li>
+                <li>Provided motivational coaching and support following best practices in the industry </li>
+                <li>Implemented goal-oriented progress tracking systems through various software applications</li>
+                <li>Applied expertise in NASM principles for better results</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motorsports Resume -->
+        <div class="row moto-resume" style="display: none;">
+          <div class="col-lg-6">
+            <h3 class="resume-title">Sumary</h3>
+            <div class="resume-item pb-0">
+              <h4>Samy Allal</h4>
+              <p><em>Enthusiastically immersed in motorsports, including Cars, Formula 1, and Motorcycles, I'm extending my passion to encompass piloting and jetskiing. Embracing the dynamic world of high-speed pursuits, I find joy in exploring new horizons and understanding the intricacies of various motorsport disciplines.</em></p>
+              <ul>
+                <li>San Diego County, California, USA</li>
+                <li>(310) 460-8440</li>
+                <li>samyallal.pro@gmail.com</li>
+              </ul>
+            </div>
+            
+            <!--
+            <h3 class="resume-title">Owned Vehicles</h3>
+            <div class="resume-item">
+              <h4>2018 Kawasaki Z-900</h4>
+              <h5>2023 - Present</h5>
+              <p><em>Motorcycle</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>2017 Yamaha MT-07</h4>
+              <h5>2023 - Present</h5>
+              <p><em>Motorcycle</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>2015 Ford Mustang - Black</h4>
+              <h5>2019 - 2023</h5>
+              <p><em>Muscle Car</em></p>
+            </div>
+          </div>-->
+
+          <div class="col-lg-6">
+            <h3 class="resume-title">Motorsports Disciplines</h3>
+            <div class="resume-item">
+              <h4>Motorcycles (MotoGP)</h4>
+              <h5>2020 - Present</h5>
+              <p><em>International</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Cars (F-1)</h4>
+              <h5>2018 - Present</h5>
+              <p><em>International</em></p>
+            </div>
+            <!--
+            <div class="resume-item">
+              <h4>Aviation (Helicopters)</h4>
+              <h5>Soon</h5>
+              <p><em>International</em></p>
+            </div>
+            <div class="resume-item">
+              <h4>Boating (Jetski, Wake-board)</h4>
+              <h5>Soon</h5>
+              <p><em>International</em></p>
+            </div>-->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Resume Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Discover the dimensions of my portfolio that align with your needs and delve into the intricate details of my work – your assessment, your preference, your informed choice.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">A.I.</li>
+              <li data-filter=".filter-card">ChatBots</li>
+              <li data-filter=".filter-web">Product Recommendation</li>
+            </ul>
+          </div>
+        </div>
+
+        <!--
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 1</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 2</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 2</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 2</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>App 3</h4>
+                <p>App</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 1</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Card 3</h4>
+                <p>Card</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Web 3</h4>
+                <p>Web</p>
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>-->
+        <p class="text-center">Coming Soon</p>
+
+      </div>
+    </section><!-- End Portfolio Section -->
+
+    
+
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container" data-aos="fade-up">
@@ -1525,7 +1596,7 @@
                 <h4>Store Owner</h4>
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Training with Samy was an exceptional experience. His wealth of knowledge and expertise pushed me to new limits, ensuring every session was both challenging and beneficial. A dedicated professional committed to maximizing results. Highly recommend for anyone seeking transformative fitness guidance.
+                    Samy revolutionized our online store with their expertise in chatbots and automation. Thanks to their innovative solutions, our sales skyrocketed, and our customers are more satisfied than ever. Thank you, Samy, for your exceptional work!
                   <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                 </p>
               </div>
@@ -1611,7 +1682,7 @@
   <footer id="footer">
     <div class="container">
       <h3>Samy Allal</h3>
-      <p>For inquiries regarding any profile of interest, please do not hesitate to contact me. Let's collaborate to achieve your goals and build success together.</p>
+      <p>For inquiries regarding any point of interest, please do not hesitate to contact me. Let's collaborate to achieve your goals and build success together.</p>
       <div class="social-links">
         <a href="" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
