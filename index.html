@@ -98,41 +98,64 @@
         <a href="https://www.linkedin.com/in/samy-allal/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
       <div class="container info mt-4" data-aos="zoom-in" data-aos-delay="100">
-        <p>Business website is launching soon!</p>
+        <p>Our official website at <b>Ukiyo Digital</b> is complete!</p>
+        <div style="text-align: center;" class="mb-3 mt-1">
+          <a href="https://digitalukiyo.com" target="_blank"><button class="btn-visit">Visit website</button></a>
+        </div>
         <div class="container info" id="countdown"></div>
       </div>
     </div>
   </section><!-- End Hero -->
 
-  <script>
-    // Set the launch date (replace this with your actual launch date)
-    const launchDate = new Date('2024-02-17T00:00:00');
+  <style>
+    /* Customize modal style */
+    .modal-content {
+      background-color: #f8f9fa;
+      color: #212529;
+    }
 
-    // Update the countdown every second
-    const countdown = setInterval(() => {
-      // Get the current date and time
-      const currentDate = new Date().getTime();
+    /* Button style */
+  .btn-visit {
+    width: 50%;
+    background-color: #0077B6; /* Purple color */
+    color: #ffffff; /* White text color */
+    padding: 15px 30px; /* Padding */
+    border-radius: 20px; /* Rounded corners */
+    font-size: 20px; /* Font size */
+    border: none; /* No border */
+    cursor: pointer; /* Cursor pointer */
+    transition: background-color 0.3s ease; /* Fade-in effect on hover */
+  }
 
-      // Calculate the time remaining until launch date
-      const timeRemaining = launchDate - currentDate;
+  /* Fade-in effect on hover */
+  .btn-visit:hover {
+    background-color: #00A6FB; /* Darker purple color */
+  }
+  </style>
 
-      // Calculate days, hours, minutes, and seconds
-      const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+  <!-- Modal HTML -->
+<div id="myModal" class="modal fade text-center">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header" style="text-align: center;">
+        <h3 class="modal-title mx-auto">Welcome </h3>
+      </div>
+      <!-- Modal Body -->
+      <div class="modal-body">
+        <p><b>Our official business website is complete!</b></p>
+        <p>Click the button below to get properly redirected.</p>
+        <p>Feel free to navigate this page to learn more about <b>Samy</b>'s profile.</p>
+      </div>
+      <!-- Modal Footer -->
+      <div style="text-align: center;" class="mb-3">
+        <a href="https://digitalukiyo.com" target="_blank"><button class="btn-visit">Visit website</button></a>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
-      // Display the countdown
-      document.getElementById('countdown').innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-
-      // If the launch date has passed, display a message and stop the countdown
-      if (timeRemaining < 0) {
-        clearInterval(countdown);
-        document.getElementById('countdown').innerHTML = 'The website has launched!';
-      }
-    }, 1000);
-
-  </script>
 
   <main id="main">
 
@@ -1719,6 +1742,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  // Trigger the modal when the page loads
+  $(document).ready(function(){
+    $('#myModal').modal('show');
+  });
+</script>
 
 
   <!-- ChatBot -->
